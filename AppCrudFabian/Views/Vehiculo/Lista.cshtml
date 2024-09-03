@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Vehiculo>
+
+<div class="card">
+    <div class="card-header">
+        <h3> @ViewBag.Action </h3>
+    </div>
+    <div class="card-body">
+
+        <a app-controller="Vehiculo" asp-action="Vehiculo" app-route-IdVehiculo="0" class="btn btn-success mt-2 mb-2" style="float: right;"> Nuevo Vehiculo</a>
+        
+        <table class="table">
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Matricula</th>
+                      <th>Marca</th>
+                      <th>Modelo</th>
+                      <th>Color</th>
+                      <th class="text-center">Acciones</th>
+                  </tr>
+              </thead>
+            <tbody>             
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> <span class="text-primary"> <strong>@item.id</strong> </span> </td>
+                        <td> @item.matricula</td>
+                        <td> @item.marca</td>
+                        <td> @item.modelo</td>
+                        <td> @item.color</td>
+                        <td style="width: 250px;">
+                            <a app-controller="Vehiculo" asp-action="Detalle" asp-route-id="@item.id" class="btn btn-sm btn-primary"> Detalle </a>
+                            <a app-controller="Vehiculo" asp-action="Vehiculo" asp-route-id="@item.id" class="btn btn-sm btn-warning"> Modificar </a>
+                            <a app-controller="Vehiculo" asp-action="Eliminar" asp-route-id="@item.id" onclick="return confirmar()" class="btn btn-sm btn-danger"> Eliminar </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>    
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        function confirmar() {
+            return confirm("Esta seguro de eliminar el vehiculo?");
+        }
+    </script>
+}

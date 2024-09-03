@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Vehiculo
+
+<div class="card">
+    <div class="card-header">
+        <h3> @ViewBag.Action </h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Id:</h5> </div>
+            <div class="col-10"> <h5> @Model.id </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr/> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Matricula:</h5> </div>
+            <div class="col-10"> <h5> @Model.matricula </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Marca:</h5> </div>
+            <div class="col-10"> <h5> @Model.marca </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Modelo:</h5> </div>
+            <div class="col-10"> <h5> @Model.modelo </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Color:</h5> </div>
+            <div class="col-10"> <h5> @Model.color </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model AppCrudFabian.Models.EmpleadosCertificaciones;
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+
+        <h2 class="mb-4"> Agregar Certificación A Empleado </h2>
+
+        <form asp-controller="Certificacion" asp-action="AgregarCertificacionEmpleado" method="post">
+            <div class="mb-3">
+                <label> Empleado:</label>
+                <select asp-for="EmpleadoId" asp-items="@ViewBag.listaEmpleados" class="form-control"> </select>
+            </div>
+            <div class="mb-3">
+                <label> Certificación:</label>
+                <select asp-for="CertificacionId" asp-items="@ViewBag.listaCertificaciones" class="form-control"> </select>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit"> Agregar </button>
+                <a asp-controller="Certificacion" asp-action="Lista" class="btn btn-warning"> Volver</a>
+            </div>
+        </form>
+
+    </div>
+</div>

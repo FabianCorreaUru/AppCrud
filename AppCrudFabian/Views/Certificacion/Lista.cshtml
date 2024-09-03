@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<AppCrudFabian.Models.Certificacion>
+
+<div class="card">
+    <div class="card-header">
+        <h3> Listado Certificaciones </h3>
+    </div>
+    <div class="card-body">
+        <a asp-controller="Certificacion" asp-action="Nuevo" class="btn btn-success mt-2 mb-2" style="float: right;"> Nueva Certificación</a>
+        <a asp-controller="Certificacion" asp-action="AgregarCertificacionEmpleado" class="btn btn-primary mt-2 mb-2" style="float: right; margin-right: 10px;"> Agregar Certificación Empleado </a>
+        
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre </th>                  
+                    <th>Acciones </th>
+                </tr>
+            </thead>
+            <tobdy>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdCertificacion</td>
+                        <td class="text-primary"> <strong> @item.Nombre </strong> </td>                      
+                        <td style="width: 200px;">
+                            <a asp-controller="Certificacion" asp-action="Editar" asp-route-id="@item.IdCertificacion" class="btn btn-primary mb-3">Editar</a>
+                            <a asp-controller="Certificacion" asp-action="Eliminar" asp-route-id="@item.IdCertificacion" onclick="return confirmar()" class="btn btn-danger mb-3">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tobdy>
+        </table>
+
+    </div>
+</div>

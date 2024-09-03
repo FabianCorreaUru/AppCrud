@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model Empleado
+
+<div class="card">
+    <div class="card-header">
+        <h3> Detalle Empleado </h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Id:</h5> </div>
+            <div class="col-10"> <h5> @Model.IdEmpleado </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Nombre Completo:</h5> </div>
+            <div class="col-10"> <h5> @Model.NombreCompleto </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Correo:</h5> </div>
+            <div class="col-10"> <h5> @Model.Correo </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Fecha Contrato:</h5> </div>
+            <div class="col-10"> <h5> @Model.FechaContrato </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-2"> <h5 class="text-primary"> Activo:</h5> </div>
+            <div class="col-10"> <h5> @Model.Activo </h5> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <hr /> </div>
+        </div>
+        <div class="row">
+            <div class="col-12"> <h5 class="text-primary"> Certificaciones:</h5> </div>
+        </div>
+
+        @foreach (var item in @ViewData["cert"] as List<EmpleadosCertificaciones>)
+        {            
+            <div class="col-12 text-center">
+                <h5 class="text-success"> @item.Certificacion.Nombre </h5>
+                <h6> @item.Certificacion.Descripcion </h6>
+            </div>     
+            <hr/>
+        }
+    </div>
+</div>
